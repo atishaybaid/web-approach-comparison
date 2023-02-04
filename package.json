@@ -1,0 +1,25 @@
+{
+  "name": "web-approach-comparison",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:mpa": "nodemon --watch mpa mpa/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atishaybaid/web-approach-comparison.git"
+  },
+  "author": "atishaybaid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atishaybaid/web-approach-comparison/issues"
+  },
+  "homepage": "https://github.com/atishaybaid/web-approach-comparison#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "type": "module"
+}
