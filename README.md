@@ -4,6 +4,7 @@
 # TODO MPA
 1)Render a todo form which has fields to enter the todo task.
 2)Add a procedure in build which wars is appropriate node version is not set,and if nvm is present automatically sets the appropriate version
+3)Create a digram view for mental model of redirection and handling at server
 
 
 

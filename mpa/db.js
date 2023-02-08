@@ -22,4 +22,9 @@ export const addToDoInDB = ({ title, complete = false }) => {
 }
 
 
+export const getCurrentToFromDb = () => {
+    return todoList;
+}
+
+
 
