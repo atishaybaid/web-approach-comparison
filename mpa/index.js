@@ -24,26 +24,33 @@ const handleToggleTodo = ({ todoId, completed }) => {
     updateTodoCompletedStatusInDb({ todoId, completed })
 }
 
+
+const renderToDoListItem = () => {
+    const toListHTMLArray = getCurrentToFromDb().map((todoItem) => {
+        const { id, complete, title } = todoItem;
+        return (
+            `<form method="post">
+                 <input type="hidden" name="todoId" value="${id}"/>
+                <input type="hidden" name="completed" value="${!complete}"/>
+                <li> ${title}</li>
+                <button 
+                 type="submit"
+                 name="intent"
+                 value="toggleTodo"
+                 title="${complete ? 'Mark as incomplete' : 'Mark as complete'}"
+                >${complete ? 'Mark as incomplete' : 'Mark as complete'}</button>
+
+            </form>`
+        )
+    })
+
+    return toListHTMLArray.join("\n")
+}
+
 const renderToDoList = () => {
     return (
         `<ul>
-           ${getCurrentToFromDb().map((todoItem) => {
-            const { id, complete, title } = todoItem;
-            return (
-                `<form method="post">
-                    <input type="hidden" name="todoId" value="${id}"/>
-                    <input type="hidden" name="completed" value="${!complete}"/>
-                    <li> ${title}</li>
-                    <button 
-                    type="submit"
-                    name="intent"
-                    value="toggleTodo"
-                    title="${complete ? 'Mark as incomplete' : 'Mark as complete'}"
-                    >${complete ? 'Mark as incomplete' : 'Mark as complete'}</button>
-
-                </form>`
-            )
-        })}
+           ${renderToDoListItem()}
         </ul>`
     )
 
